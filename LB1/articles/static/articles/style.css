@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.mainheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.article {
+    background: white;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.article h2 {
+    margin-bottom: 5px;
+}
+
+.author {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.article p {
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #3498db;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.save-btn {
+    background-color: #2ecc71;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    padding: 10px 20px;
+    color: white;
+}
+
+.user-info {
+    font-size: 14px;
+}
+
+.auth-buttons a,
+.logout-btn {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.login-btn {
+    background-color: #3498db;
+}
+
+.register-btn {
+    background-color: #9b59b6;
+}
+
+.logout-btn {
+    background-color: #e67e22;
+    border: none;
+    cursor: pointer;
+}
+
+.create-btn {
+    background-color: #2ecc71;
+    display: inline-block;
+}

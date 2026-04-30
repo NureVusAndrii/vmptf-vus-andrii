@@ -1,0 +1,53 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'articles/style.css' %}">
+
+<div class="navbar">
+    <div><strong>News</strong></div>
+
+    <div>
+        {% if user.is_authenticated %}
+            <span class="user-info">
+                Welcome, {{ user.username }}
+            </span>
+
+            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                {% csrf_token %}
+                <button class="logout-btn">Logout</button>
+            </form>
+        {% else %}
+            <div class="auth-buttons">
+                <a class="login-btn" href="{% url 'login' %}">Login</a>
+                <a class="register-btn" href="{% url 'register' %}">Register</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="mainheader">
+    <h1>Articles</h1>
+    {% if user.is_authenticated %}
+    <a class="button create-btn" href="{% url 'article_create' %}">
+        + Create Article
+    </a>
+    {% endif %}
+</div>
+
+{% for article in articles %}
+    <div class="article">
+        <h2>{{ article.title }}</h2>
+
+        <div class="author">
+            Author: {{ article.author.username }}
+        </div>
+
+        <p>{{ article.text }}</p>
+
+        <a class="button edit-btn" href="{% url 'article_edit' article.id %}">
+            Edit
+        </a>
+
+        <a class="button delete-btn" href="{% url 'article_delete' article.id %}">
+            Delete
+        </a>
+    </div>
+{% endfor %}
