@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1777309879149,
+    "username": "APAXIC",
+    "email": "andrii.vus@nure.ua",
+    "password": "$2b$08$8syfhjlsDa5lIMA65XqBweGL4p5TzerWQ/KDbFKsq4KzfUsspeO3a",
+    "role": "admin"
+  },
+  {
+    "id": 1777310250000,
+    "username": "aboba",
+    "email": "ardron13@gmail.com",
+    "password": "$2b$08$BQxOh/3t3a6R9KYhqgMsB.FHFdb5CRjPaduXuNsdqEpi4dbIohn6u",
+    "role": "user"
+  }
+]
