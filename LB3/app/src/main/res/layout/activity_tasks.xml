@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task Manager"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Logout"
+                android:backgroundTint="#FF5252"
+                style="?android:attr/buttonStyleSmall" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvUserStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logged in as: ..."
+            android:textColor="#BBBBBB"
+            android:layout_marginBottom="16dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins">
+            <TextView android:id="@+id/statTotal" android:layout_width="0dp" android:layout_gravity="fill" android:layout_columnWeight="1" android:background="#E3F2FD" android:padding="12dp" android:layout_margin="4dp" android:text="0\nTotal" android:textAlignment="center" android:textColor="#000" android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+            <TextView android:id="@+id/statDone" android:layout_width="0dp" android:layout_gravity="fill" android:layout_columnWeight="1" android:background="#E8F5E9" android:padding="12dp" android:layout_margin="4dp" android:text="0\nDone" android:textAlignment="center" android:textColor="#000" android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+            <TextView android:id="@+id/statPending" android:layout_width="0dp" android:layout_gravity="fill" android:layout_columnWeight="1" android:background="#FFF3E0" android:padding="12dp" android:layout_margin="4dp" android:text="0\nPending" android:textAlignment="center" android:textColor="#000" android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+            <TextView android:id="@+id/statOverdue" android:layout_width="0dp" android:layout_gravity="fill" android:layout_columnWeight="1" android:background="#FFEBEE" android:padding="12dp" android:layout_margin="4dp" android:text="0\nOverdue" android:textAlignment="center" android:textColor="#D32F2F" android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+        </GridLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="#1E1E1E">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <EditText
+                    android:id="@+id/etNewTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Task Title"
+                    android:textColorHint="#888"
+                    android:textColor="#FFF"
+                    android:backgroundTint="#444"/>
+
+                <TextView
+                    android:id="@+id/tvSelectedDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Select Date &amp; Time"
+                    android:textColor="#2196F3"
+                    android:paddingVertical="12dp"
+                    android:textSize="16sp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <Spinner
+                    android:id="@+id/spinnerUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnCreateTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Task"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="#2196F3"
+                    android:textColor="#FFF"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:overScrollMode="never"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
