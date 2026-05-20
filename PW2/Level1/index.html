@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Список покупок</title>
+</head>
+<body>
+<h1>Мій список покупок</h1>
+<ul id="shopping-list"></ul>
+
+<script>
+  fetch('shopping-list.json')
+          .then(response => response.text())
+          .then(data => {
+            const items = JSON.parse(data);
+            const listContainer = document.getElementById('shopping-list');
+
+            items.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = item;
+              listContainer.appendChild(li);
+            });
+          })
+          .catch(error => console.error('Помилка завантаження:', error));
+</script>
+</body>
+</html>

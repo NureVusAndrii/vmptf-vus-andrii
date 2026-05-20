@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Фільтр JSON</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .controls { margin: 20px; }
+    #result-list { margin-top: 20px; }
+    #filter-input {min-width: 200px; }
+  </style>
+</head>
+<body>
+<h1>Фільтрація даних</h1>
+
+<div class="controls">
+  <input type="text" id="filter-input" placeholder="Введіть категорію (напр. їжа)">
+  <button id="filter-btn">Фільтрувати</button>
+</div>
+
+<ul id="result-list"></ul>
+
+<script>
+  function getFilteredData(data, filterValue) {
+    return data.filter(item =>
+            item.category.toLowerCase() === filterValue.toLowerCase()
+    );
+  }
+
+  const btn = document.getElementById('filter-btn');
+  const input = document.getElementById('filter-input');
+  const listContainer = document.getElementById('result-list');
+
+  btn.addEventListener('click', () => {
+    const val = input.value.trim();
+    if (!val) return alert("Введіть категорію для фільтрації");
+
+    listContainer.innerHTML = '';
+
+    fetch('products.json')
+            .then(response => response.text())
+            .then(text => {
+              const allProducts = JSON.parse(text);
+
+              const filtered = getFilteredData(allProducts, val);
+
+              if (filtered.length === 0) {
+                listContainer.innerHTML = '<li>Нічого не знайдено</li>';
+              } else {
+                filtered.forEach(item => {
+                  const li = document.createElement('li');
+                  li.textContent = `${item.name} (${item.category})`;
+                  listContainer.appendChild(li);
+                });
+              }
+            })
+            .catch(error => {
+              console.error('Помилка:', error);
+              alert("Не вдалося завантажити або обробити JSON");
+            });
+  });
+</script>
+</body>
+</html>

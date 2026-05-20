@@ -1,0 +1,10 @@
+[
+  { "name": "Ноутбук", "category": "техніка" },
+  { "name": "Шафа", "category": "меблі" },
+  { "name": "Стіл", "category": "меблі" },
+  { "name": "Яблуко", "category": "їжа" },
+  { "name": "Телефон", "category": "техніка" },
+  { "name": "Хліб", "category": "їжа" },
+  { "name": "Стілець", "category": "меблі" },
+  { "name": "Банан", "category": "їжа" }
+]
