@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="16dp">
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Рецепти"
+      android:textStyle="bold"
+      android:textSize="28sp"
+      android:layout_marginBottom="16dp"/>
+
+  <EditText
+      android:id="@+id/editTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Назва рецепту"/>
+
+  <EditText
+      android:id="@+id/editIngredients"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Інгредієнти"
+      android:inputType="textMultiLine"
+      android:gravity="top"
+      android:minLines="4"
+      android:layout_marginTop="8dp"/>
+
+  <EditText
+      android:id="@+id/editInstructions"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Вказівки"
+      android:minLines="4"
+      android:gravity="top"
+      android:layout_marginTop="8dp"/>
+
+  <Button
+      android:id="@+id/btnAddRecipe"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Додати рецепт"
+      android:layout_marginTop="12dp"/>
+
+  <EditText
+      android:id="@+id/editSearch"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Пошук за назвою"/>
+
+  <Spinner
+      android:id="@+id/spinnerIngredients"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"/>
+
+  <Button
+      android:id="@+id/btnSearch"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Шукати / Фільтрувати"
+      android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnClearFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Очистити фільтри"
+        android:layout_marginTop="8dp"/>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerRecipes"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:nestedScrollingEnabled="false"
+      android:layout_marginTop="16dp"/>
+
+  </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
