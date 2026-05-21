@@ -7,6 +7,7 @@ import studentRoutes from "./routes/studentRoutes.js";
 import teacherRoutes from "./routes/teacherRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
 import gradeRoutes from "./routes/gradeRoutes.js";
+import classRoutes from "./routes/classRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use("/api/students", studentRoutes);
 app.use("/api/teachers", teacherRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/grades", gradeRoutes);
+app.use("/api/classes", classRoutes);
 
 app.get("/", (req, res) => {
   res.json({

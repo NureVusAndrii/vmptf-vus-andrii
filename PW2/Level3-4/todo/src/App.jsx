@@ -11,7 +11,7 @@ function App() {
     fetch('/todo.json')
       .then((response) => {
         if (!response.ok) throw new Error('Помилка завантаження');
-        return response.json(); // Перетворення JSON у об'єкт JavaScript[cite: 17, 31].
+        return response.json();
       })
       .then((data) => setTodos(data))
       .catch((error) => console.error('Помилка:', error));
