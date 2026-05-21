@@ -77,7 +77,7 @@ export const Class = sequelize.define("Class", {
     allowNull: false
   },
   class_date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false
   },
   topic: {
